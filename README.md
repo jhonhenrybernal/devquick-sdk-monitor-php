@@ -52,6 +52,6 @@ Este proyecto está licenciado bajo la licencia MIT. Puedes usarlo libremente en
 
 ## Contacto
 Si necesitas soporte o tienes alguna consulta, puedes contactarnos en:
-- **Email:** soporte@devquick.com
-- **Sitio web:** [devquick.com](https://devquick.com)
+- **Email:** soporte@devquick.co
+- **Sitio web:** [devquick.com](https://devquick.co)
 
