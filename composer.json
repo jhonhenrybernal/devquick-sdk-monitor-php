@@ -5,19 +5,21 @@
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "Devquick\\ReportDevPhp\\": "src/"
+            "DevQuick\\ReportSdkPhp\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "Jhon Bernal"
+            "name": "Jhon Bernal",
+            "email": "tu-email@ejemplo.com"
         }
     ],
     "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": ">=8.0",
         "guzzlehttp/guzzle": "^7.5",
-        "nesbot/carbon": "^3.0@dev",
-        "vlucas/phpdotenv": "^5.6@dev"
+        "nesbot/carbon": "^3.0",
+        "vlucas/phpdotenv": "^5.6"
     }
 }

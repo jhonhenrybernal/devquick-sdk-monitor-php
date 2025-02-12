@@ -46,7 +46,7 @@ class ComposerStaticInit5a6b89f5591e4b8ff39c022c8f04cde7
         'D' => 
         array (
             'Dotenv\\' => 7,
-            'Devquick\\ReportDevPhp\\' => 22,
+            'DevQuick\\ReportSdkPhp\\' => 22,
         ),
         'C' => 
         array (
@@ -121,7 +121,7 @@ class ComposerStaticInit5a6b89f5591e4b8ff39c022c8f04cde7
         array (
             0 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
         ),
-        'Devquick\\ReportDevPhp\\' => 
+        'DevQuick\\ReportSdkPhp\\' => 
         array (
             0 => __DIR__ . '/../..' . '/src',
         ),
