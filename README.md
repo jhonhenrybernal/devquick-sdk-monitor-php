@@ -1,3 +1,5 @@
+![DevQuick Monitor SDK](https://github.com/jhonhenrybernal/devquick-sdk-monitor-php/blob/main/logo_empresa.jpg)
+
 # DevQuick Monitor SDK para PHP
 
 ## Descripción
@@ -28,7 +30,6 @@ Debes configurar tu API Key y la URL del servidor de monitoreo en un archivo `.e
 ```ini
 # Configuración de DevQuick Monitor SDK
 DEVQUICK_MONITOR_API_KEY=tu_api_key
-DEVQUICK_MONITOR_API_URL=https://tu-servidor.com/api/report
 ```
 
 ### 2. Cargar las variables de entorno en PHP
