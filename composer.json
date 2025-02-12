@@ -1,0 +1,23 @@
+{
+    "name": "devquick/report-dev-php",
+    "description": "SDK para capturar y reportar errores a un sistema de monitoreo",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Devquick\\ReportDevPhp\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jhon Bernal"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=8.0",
+        "guzzlehttp/guzzle": "^7.5",
+        "nesbot/carbon": "^3.0@dev",
+        "vlucas/phpdotenv": "^5.6@dev"
+    }
+}
