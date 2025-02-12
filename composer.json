@@ -1,5 +1,5 @@
 {
-    "name": "devquick/report-dev-php",
+    "name": "devquick/report-sdk-php",
     "description": "SDK para capturar y reportar errores a un sistema de monitoreo",
     "type": "library",
     "license": "MIT",
