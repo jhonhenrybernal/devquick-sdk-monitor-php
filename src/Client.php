@@ -1,36 +1,35 @@
 <?php
 
-namespace DevQuick\ReportDevPhp;
+namespace DevQuick\ReportSdkPhp;
 
-use GuzzleHttp\Client as GuzzleClient;
+use DevQuick\ReportSdkPhp\Client;
+use Carbon\Carbon;
+use Dotenv\Dotenv;
 
-class Client
+class DevQuickMonitor
 {
-    protected $http;
-    protected $apiKey;
-    protected $apiUrl;
+    protected $client;
 
-    public function __construct($apiKey, $apiUrl)
+    public function __construct()
     {
-        $this->apiKey = '1|of0oBN0VXLonKUGCRyUO0mPHle5go9HJ8PPCAjIsd1721307';
-        $this->apiUrl = 'http://localhost:8000';
-        $this->http = new GuzzleClient();
+        $dotenv = Dotenv::createImmutable(__DIR__ . '/../');
+        $dotenv->load();
+
+        $apiKey = '1|of0oBN0VXLonKUGCRyUO0mPHle5go9HJ8PPCAjIsd1721307';
+        $apiUrl = "http://localhost:8000";
+        
+        $this->client = new Client($apiKey, $apiUrl);
     }
 
-    public function sendError(array $data)
+    public function reportException(\Throwable $exception)
     {
-        try {
-            $response = $this->http->post("{$this->apiUrl}/api/report", [
-                'json' => $data,
-                'headers' => [
-                    'Authorization' => "Bearer {$this->apiKey}",
-                    'Content-Type' => 'application/json',
-                ]
-            ]);
-
-            return json_decode($response->getBody()->getContents(), true);
-        } catch (\Exception $e) {
-            return ['error' => 'Error al enviar reporte', 'message' => $e->getMessage()];
-        }
+        return $this->client->sendError([
+            'error_type' => get_class($exception),
+            'error_message' => $exception->getMessage(),
+            'stack_trace' => $exception->getTraceAsString(),
+            'timestamp' => Carbon::now()->toDateTimeString(),
+            'project_key' => '12213',
+            'sdk_version' => '1.0.0',
+        ]);
     }
 }

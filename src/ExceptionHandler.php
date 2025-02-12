@@ -1,6 +1,6 @@
 <?php
 
-namespace DevQuick\ReportDevPhp;
+namespace DevQuick\ReportSdkPhp;
 
 use Throwable;
 
