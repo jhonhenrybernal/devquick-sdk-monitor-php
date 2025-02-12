@@ -3,7 +3,7 @@
         'name' => 'devquick/report-sdk-php',
         'pretty_version' => 'dev-main',
         'version' => 'dev-main',
-        'reference' => '215b40b2fba299007ccdf5031df0e7813c2fae95',
+        'reference' => 'aafba9ff1d9828b2a4109b39997a43f6ac7f2968',
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -22,7 +22,7 @@
         'devquick/report-sdk-php' => array(
             'pretty_version' => 'dev-main',
             'version' => 'dev-main',
-            'reference' => '215b40b2fba299007ccdf5031df0e7813c2fae95',
+            'reference' => 'aafba9ff1d9828b2a4109b39997a43f6ac7f2968',
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
