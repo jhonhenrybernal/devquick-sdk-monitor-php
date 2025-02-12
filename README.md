@@ -19,7 +19,7 @@ El **DevQuick Monitor SDK** es una librería PHP diseñada para capturar y repor
 ## Instalación
 Para instalar el SDK en tu proyecto, ejecuta el siguiente comando:
 ```sh
-composer require devquick/report-dev-php
+composer require devquick/report-sdk-php
 ```
 
 ## Configuración
