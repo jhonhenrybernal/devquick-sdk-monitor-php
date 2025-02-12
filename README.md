@@ -44,7 +44,6 @@ $dotenv = Dotenv::createImmutable(__DIR__);
 $dotenv->load();
 
 $apiKey = getenv('DEVQUICK_MONITOR_API_KEY');
-$apiUrl = getenv('DEVQUICK_MONITOR_API_URL');
 ```
 
 ## Licencia
