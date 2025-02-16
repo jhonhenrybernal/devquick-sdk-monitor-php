@@ -1,5 +1,4 @@
 <?php
-
 namespace DevQuick\ReportSdkPhp;
 
 use DevQuick\ReportSdkPhp\Client;
@@ -9,16 +8,17 @@ use GuzzleHttp\Client as GuzzleClient;
 class DevQuickMonitor
 {
     protected $client;
+    protected $httpClient;
 
     public function __construct($apiKey)
     {
-        // Se pasa solo `apiKey`
         $this->client = new Client($apiKey);
+        $this->httpClient = new GuzzleClient(); // Cliente HTTP por defecto
     }
 
     public function setClient(GuzzleClient $client)
     {
-        $this->client->setHttpClient($client);
+        $this->httpClient = $client;
     }
 
     public function reportException(\Throwable $exception)

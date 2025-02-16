@@ -1,5 +1,4 @@
 <?php
-
 namespace DevQuick\ReportSdkPhp;
 
 use GuzzleHttp\Client as GuzzleClient;
@@ -10,11 +9,11 @@ class Client
     protected $apiKey;
     protected $apiUrl;
 
-    public function __construct($apiKey)
+    public function __construct($apiKey, GuzzleClient $client = null)
     {
         $this->apiKey = $apiKey;
-        $this->apiUrl = 'https://localhost:8000';
-        $this->http = new GuzzleClient();
+        $this->apiUrl = 'http://localhost:8000';
+        $this->http = $client ?? new GuzzleClient();
     }
 
     public function sendError(array $data)
