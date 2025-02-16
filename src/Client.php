@@ -9,11 +9,11 @@ class Client
     protected $apiKey;
     protected $apiUrl;
 
-    public function __construct($apiKey, GuzzleClient $client = null)
+    public function __construct($apiKey)
     {
         $this->apiKey = $apiKey;
         $this->apiUrl = 'http://localhost:8000';
-        $this->http = $client ?? new GuzzleClient();
+        $this->http = new GuzzleClient();
     }
 
     public function sendError(array $data)
