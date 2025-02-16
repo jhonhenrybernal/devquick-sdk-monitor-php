@@ -4,35 +4,21 @@ namespace DevQuick\ReportSdkPhp;
 
 use DevQuick\ReportSdkPhp\Client;
 use Carbon\Carbon;
+use GuzzleHttp\Client as GuzzleClient;
 
 class DevQuickMonitor
 {
     protected $client;
-    protected $apiKey;
-    protected $apiUrl;
-    protected $secretKey;
 
-    public function __construct($apiKey, $encryptedApiUrl, $secretKey)
+    public function __construct($apiKey)
     {
-        $this->apiKey = $apiKey;
-        $this->secretKey = $secretKey;
-        $this->apiUrl = $this->decryptUrl($encryptedApiUrl, $this->secretKey);
-
-        $this->client = new Client($this->apiKey, $this->apiUrl);
+        // Se pasa solo `apiKey`
+        $this->client = new Client($apiKey);
     }
 
-    private function decryptUrl($encryptedUrl, $key)
+    public function setClient(GuzzleClient $client)
     {
-        $data = base64_decode($encryptedUrl);
-        $iv = substr($data, 0, 16);
-        $encrypted = substr($data, 16);
-        return openssl_decrypt($encrypted, 'AES-256-CBC', $key, 0, $iv);
-    }
-
-    public function setApiKey($apiKey)
-    {
-        $this->apiKey = $apiKey;
-        $this->client = new Client($this->apiKey, $this->apiUrl);
+        $this->client->setHttpClient($client);
     }
 
     public function reportException(\Throwable $exception)
@@ -42,7 +28,6 @@ class DevQuickMonitor
             'error_message' => $exception->getMessage(),
             'stack_trace' => $exception->getTraceAsString(),
             'timestamp' => Carbon::now()->toDateTimeString(),
-            'project_key' => '12213',
             'sdk_version' => '1.0.0',
         ]);
     }
