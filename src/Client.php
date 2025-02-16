@@ -10,10 +10,10 @@ class Client
     protected $apiKey;
     protected $apiUrl;
 
-    public function __construct($apiKey, $apiUrl)
+    public function __construct($apiKey)
     {
         $this->apiKey = $apiKey;
-        $this->apiUrl = $apiUrl;
+        $this->apiUrl = 'https://localhost:8000';
         $this->http = new GuzzleClient();
     }
 
