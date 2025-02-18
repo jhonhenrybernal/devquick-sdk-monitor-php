@@ -12,7 +12,7 @@ class Client
     public function __construct($apiKey)
     {
         $this->apiKey = $apiKey;
-        $this->apiUrl = 'http://localhost:8000';
+        $this->apiUrl = 'http://localhost:8000'; // Cambia por la URL real del backend
         $this->http = new GuzzleClient();
     }
 
@@ -27,7 +27,8 @@ class Client
                 ]
             ]);
 
-            return json_decode($response->getBody()->getContents(), true);
+            $body = json_decode($response->getBody()->getContents(), true);
+            return is_array($body) ? $body : ['error' => 'Respuesta no válida del servidor'];
         } catch (\Exception $e) {
             return ['error' => 'Error al enviar reporte', 'message' => $e->getMessage()];
         }
