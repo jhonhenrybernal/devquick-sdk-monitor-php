@@ -23,15 +23,15 @@ class DevQuickMonitor
     public function reportException(\Throwable $exception)
     {
         
-        $this->logSystemInfo([
-            'error_type' => get_class($exception),
-            'error_message' => $exception->getMessage(),
-            'stack_trace' => $exception->getTraceAsString(),
-            'timestamp' => Carbon::now()->toDateTimeString(),
-            'sdk_version' => 'PHP 1.0.0',
-            'system_info' => json_encode($this->getSystemInfo()),
-            'security_scan' => json_encode($this->scanVulnerabilities())
-        ]); // Guarda los datos antes de enviar
+        // $this->logSystemInfo([
+        //     'error_type' => get_class($exception),
+        //     'error_message' => $exception->getMessage(),
+        //     'stack_trace' => $exception->getTraceAsString(),
+        //     'timestamp' => Carbon::now()->toDateTimeString(),
+        //     'sdk_version' => 'PHP 1.0.0',
+        //     'system_info' => json_encode($this->getSystemInfo()),
+        //     'security_scan' => json_encode($this->scanVulnerabilities())
+        // ]); // Guarda los datos antes de enviar
         return $this->client->sendError([
             'error_type' => get_class($exception),
             'error_message' => $exception->getMessage(),
